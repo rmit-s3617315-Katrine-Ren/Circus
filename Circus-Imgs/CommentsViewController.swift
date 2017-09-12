@@ -10,21 +10,27 @@ import UIKit
 
 class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
-    //testing
+    
+    var defaultConstraintValue: CGFloat = 0;
+
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+
     @IBOutlet var commentView: UITableView!
     @IBOutlet weak var commentsTextfield: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var commentsBox: UIScrollView!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        defaultConstraintValue = bottomConstraint.constant;
+
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-    
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
 
@@ -71,8 +77,21 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     //keyboard control
-    func keyboardDidShow(notification: NSNotification) {
+    func keyboardShow(notification: NSNotification) {
         
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        {
+            print("keyboard height!! \(keyboardSize.height)");
+            bottomConstraint.constant = keyboardSize.height + defaultConstraintValue + 44;
+            UIView.animate(withDuration: 0.1)
+            {
+                self.view.layoutIfNeeded()
+            }
+            print("keyboard show!! \(bottomConstraint.constant)");
+        }
+        
+        
+        /*
         if let activeField = self.commentsTextfield, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
             
@@ -85,13 +104,25 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
                 self.commentsBox.scrollRectToVisible(activeField.frame, animated: true)
             }
         }
+ */
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
+    func keyboardHide(notification: NSNotification)
+    
+    {
+        bottomConstraint.constant = defaultConstraintValue;
+        UIView.animate(withDuration: 0.1)
+        {
+            self.view.layoutIfNeeded()
+        }
+        print("keyboard hide!! \(bottomConstraint.constant)");
+    }
+    
+    /*{
         let contentInsets = UIEdgeInsets.zero
         self.commentsBox.contentInset = contentInsets
         self.commentsBox.scrollIndicatorInsets = contentInsets
-    }
+    }*/
     
 
 
