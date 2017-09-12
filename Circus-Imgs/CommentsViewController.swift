@@ -10,6 +10,7 @@ import UIKit
 
 class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    //testing
     @IBOutlet var commentView: UITableView!
     @IBOutlet weak var commentsTextfield: UITextField!
     @IBOutlet weak var submitButton: UIButton!
