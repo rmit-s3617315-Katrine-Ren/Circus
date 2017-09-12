@@ -91,20 +91,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         
-        /*
-        if let activeField = self.commentsTextfield, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-            
-            
-            self.commentsBox.contentInset = contentInsets
-            self.commentsBox.scrollIndicatorInsets = contentInsets
-            var aRect = self.view.frame
-            aRect.size.height -= keyboardSize.size.height
-            if (!aRect.contains(activeField.frame.origin)) {
-                self.commentsBox.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
- */
+       
     }
     
     func keyboardHide(notification: NSNotification)
@@ -118,12 +105,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         print("keyboard hide!! \(bottomConstraint.constant)");
     }
     
-    /*{
-        let contentInsets = UIEdgeInsets.zero
-        self.commentsBox.contentInset = contentInsets
-        self.commentsBox.scrollIndicatorInsets = contentInsets
-    }*/
-    
+
 
 
 
