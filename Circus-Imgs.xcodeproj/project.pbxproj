@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		489A45621F70A6DD0007015F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489A45601F709C740007015F /* SwiftyJSON.framework */; };
+		48A31AF11F6F803B00B406AA /* RESTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */; };
 		84694B521F4A86F500AB597C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84694B511F4A86F500AB597C /* AppDelegate.swift */; };
 		84694B541F4A86F500AB597C /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84694B531F4A86F500AB597C /* CommentsViewController.swift */; };
 		84694B571F4A86F500AB597C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84694B551F4A86F500AB597C /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		84694B6E1F4BF5E800AB597C /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84694B6D1F4BF5E800AB597C /* SearchTableView.swift */; };
 		84B6951A1F5006E200132470 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B695191F5006E200132470 /* Message.swift */; };
 		84B6951C1F5008B300132470 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6951B1F5008B300132470 /* MessageCell.swift */; };
+		88A9D0D95CD252123B9D9AF9 /* Pods_Circus_Imgs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D1B8993E2E3EA71395923C /* Pods_Circus_Imgs.framework */; };
+		CE0BA90F72CB7C4010BF3501 /* Pods_Circus_ImgsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F057A98B40F8B5838C5514A0 /* Pods_Circus_ImgsUITests.framework */; };
 		FA2A21331F52DDDE001A64B5 /* Circus_ImgsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A21321F52DDDE001A64B5 /* Circus_ImgsUITests.swift */; };
 		FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		489A45601F709C740007015F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Circus-Imgs-fhyyogvfugwymqcdkjshaxejnewb/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTAPIManager.swift; sourceTree = "<group>"; };
 		84694B4E1F4A86F500AB597C /* Circus-Imgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Circus-Imgs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84694B511F4A86F500AB597C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84694B531F4A86F500AB597C /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +54,12 @@
 		84694B6D1F4BF5E800AB597C /* SearchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
 		84B695191F5006E200132470 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		84B6951B1F5008B300132470 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		9BDEC22FFFEAC7EB882764A9 /* Pods-Circus-Imgs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Circus-Imgs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Circus-Imgs/Pods-Circus-Imgs.debug.xcconfig"; sourceTree = "<group>"; };
+		C3132138D4541F4F7D8CB5B0 /* Pods-Circus-ImgsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Circus-ImgsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Circus-ImgsUITests/Pods-Circus-ImgsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C5D1B8993E2E3EA71395923C /* Pods_Circus_Imgs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Circus_Imgs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D421594DA4DB7D645F1844E8 /* Pods-Circus-ImgsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Circus-ImgsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Circus-ImgsUITests/Pods-Circus-ImgsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE3E1C5CF4C3E9B1C50C09B1 /* Pods-Circus-Imgs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Circus-Imgs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Circus-Imgs/Pods-Circus-Imgs.release.xcconfig"; sourceTree = "<group>"; };
+		F057A98B40F8B5838C5514A0 /* Pods_Circus_ImgsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Circus_ImgsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2A21301F52DDDE001A64B5 /* Circus-ImgsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Circus-ImgsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2A21321F52DDDE001A64B5 /* Circus_ImgsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circus_ImgsUITests.swift; sourceTree = "<group>"; };
 		FA2A21341F52DDDE001A64B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489A45621F70A6DD0007015F /* SwiftyJSON.framework in Frameworks */,
+				88A9D0D95CD252123B9D9AF9 /* Pods_Circus_Imgs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0BA90F72CB7C4010BF3501 /* Pods_Circus_ImgsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +93,8 @@
 				84694B501F4A86F500AB597C /* Circus-Imgs */,
 				FA2A21311F52DDDE001A64B5 /* Circus-ImgsUITests */,
 				84694B4F1F4A86F500AB597C /* Products */,
+				8EE2C727BBD558E19C344D76 /* Frameworks */,
+				94A5F909B7FB6990451F7E00 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +120,27 @@
 				84694B5D1F4A86F500AB597C /* Info.plist */,
 			);
 			path = "Circus-Imgs";
+			sourceTree = "<group>";
+		};
+		8EE2C727BBD558E19C344D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				489A45601F709C740007015F /* SwiftyJSON.framework */,
+				C5D1B8993E2E3EA71395923C /* Pods_Circus_Imgs.framework */,
+				F057A98B40F8B5838C5514A0 /* Pods_Circus_ImgsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94A5F909B7FB6990451F7E00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BDEC22FFFEAC7EB882764A9 /* Pods-Circus-Imgs.debug.xcconfig */,
+				DE3E1C5CF4C3E9B1C50C09B1 /* Pods-Circus-Imgs.release.xcconfig */,
+				D421594DA4DB7D645F1844E8 /* Pods-Circus-ImgsUITests.debug.xcconfig */,
+				C3132138D4541F4F7D8CB5B0 /* Pods-Circus-ImgsUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		FA2A21311F52DDDE001A64B5 /* Circus-ImgsUITests */ = {
@@ -140,6 +178,7 @@
 			children = (
 				84B695191F5006E200132470 /* Message.swift */,
 				84694B671F4BA3CF00AB597C /* Model.swift */,
+				48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -151,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84694B601F4A86F500AB597C /* Build configuration list for PBXNativeTarget "Circus-Imgs" */;
 			buildPhases = (
+				E6B21474F41FF7FA4DCB7F57 /* [CP] Check Pods Manifest.lock */,
 				84694B4A1F4A86F500AB597C /* Sources */,
 				84694B4B1F4A86F500AB597C /* Frameworks */,
 				84694B4C1F4A86F500AB597C /* Resources */,
+				A500739CCD073126986C8042 /* [CP] Embed Pods Frameworks */,
+				33A7764A4F76EDDB02C1352A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2A21391F52DDDE001A64B5 /* Build configuration list for PBXNativeTarget "Circus-ImgsUITests" */;
 			buildPhases = (
+				9D7EE4903CA7F997B6985859 /* [CP] Check Pods Manifest.lock */,
 				FA2A212C1F52DDDE001A64B5 /* Sources */,
 				FA2A212D1F52DDDE001A64B5 /* Frameworks */,
 				FA2A212E1F52DDDE001A64B5 /* Resources */,
+				1D75B41A9A7873DAB59217D3 /* [CP] Embed Pods Frameworks */,
+				A62FB78F3B7364ED47C6DCF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +287,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D75B41A9A7873DAB59217D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Circus-ImgsUITests/Pods-Circus-ImgsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33A7764A4F76EDDB02C1352A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Circus-Imgs/Pods-Circus-Imgs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D7EE4903CA7F997B6985859 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Circus-ImgsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A500739CCD073126986C8042 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Circus-Imgs/Pods-Circus-Imgs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Circus-Imgs/Pods-Circus-Imgs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A62FB78F3B7364ED47C6DCF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Circus-ImgsUITests/Pods-Circus-ImgsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6B21474F41FF7FA4DCB7F57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Circus-Imgs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84694B4A1F4A86F500AB597C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -250,6 +397,7 @@
 				84694B681F4BA3CF00AB597C /* Model.swift in Sources */,
 				84B6951C1F5008B300132470 /* MessageCell.swift in Sources */,
 				FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */,
+				48A31AF11F6F803B00B406AA /* RESTAPIManager.swift in Sources */,
 				84694B6E1F4BF5E800AB597C /* SearchTableView.swift in Sources */,
 				84694B6A1F4BDD3000AB597C /* CommentsCell.swift in Sources */,
 				84694B641F4A89E200AB597C /* Images Feed Table View Controller.swift in Sources */,
@@ -395,6 +543,7 @@
 		};
 		84694B611F4A86F500AB597C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BDEC22FFFEAC7EB882764A9 /* Pods-Circus-Imgs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Circus-Imgs/Info.plist";
@@ -407,6 +556,7 @@
 		};
 		84694B621F4A86F500AB597C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE3E1C5CF4C3E9B1C50C09B1 /* Pods-Circus-Imgs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Circus-Imgs/Info.plist";
@@ -419,6 +569,7 @@
 		};
 		FA2A21371F52DDDE001A64B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D421594DA4DB7D645F1844E8 /* Pods-Circus-ImgsUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Circus-ImgsUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -431,6 +582,7 @@
 		};
 		FA2A21381F52DDDE001A64B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3132138D4541F4F7D8CB5B0 /* Pods-Circus-ImgsUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Circus-ImgsUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -469,6 +621,7 @@
 				FA2A21381F52DDDE001A64B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

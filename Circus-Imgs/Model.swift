@@ -13,11 +13,11 @@ class Model
 {
     static var get: Model = Model()
     
-    private init()
-    {
-        
-    }
+    private init() { }
     
+    
+    
+
     
     var images: [String] = ["mushroom", "xanaduhouses", "londonolympics"]
     

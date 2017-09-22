@@ -18,4 +18,6 @@ class MyCell: UITableViewCell
     @IBOutlet weak var likeButton: UIButton!;
     @IBOutlet weak var shareButton: UIButton!;
     @IBOutlet weak var commentButton: UIButton!;
+    
+    
 }
