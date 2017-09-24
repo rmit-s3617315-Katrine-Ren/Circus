@@ -57,7 +57,7 @@ class Model
     
     
     // R: tackle retrieving from core data
-    private func getImageFromCoreData()
+    func getImageFromCoreData()
     {
         do{
             let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
