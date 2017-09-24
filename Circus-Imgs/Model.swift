@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class Model
 {
@@ -15,6 +16,11 @@ class Model
     
     private init() { }
     
+}
+
+
+
+    /** data for old version*/
     
     
 
@@ -28,4 +34,6 @@ class Model
     var search: [String] = ["#cats", "#yasqueen", "#yesyesnono", "#emotionalclub"]
     
     var chat:[Message]=[Message(text: "How was the party? ", type: .messageIn),Message(text: "That was crazy hahaha!!", type: .messageOut), Message(text: "Sounds Awesome!!", type: .messageIn), Message(text: "You should come with us.", type: .messageOut)]
+ 
+     
 }

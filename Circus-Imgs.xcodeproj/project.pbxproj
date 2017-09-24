@@ -24,6 +24,9 @@
 		88A9D0D95CD252123B9D9AF9 /* Pods_Circus_Imgs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D1B8993E2E3EA71395923C /* Pods_Circus_Imgs.framework */; };
 		CE0BA90F72CB7C4010BF3501 /* Pods_Circus_ImgsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F057A98B40F8B5838C5514A0 /* Pods_Circus_ImgsUITests.framework */; };
 		FA2A21331F52DDDE001A64B5 /* Circus_ImgsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A21321F52DDDE001A64B5 /* Circus_ImgsUITests.swift */; };
+		FA8F76731F737A0700868A94 /* Circus-Imgs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76711F737A0700868A94 /* Circus-Imgs.xcdatamodeld */; };
+		FA8F76751F737C1900868A94 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76741F737C1900868A94 /* Image+CoreDataClass.swift */; };
+		FA8F76771F737C2600868A94 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76761F737C2600868A94 /* Image+CoreDataProperties.swift */; };
 		FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,9 @@
 		FA2A21301F52DDDE001A64B5 /* Circus-ImgsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Circus-ImgsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2A21321F52DDDE001A64B5 /* Circus_ImgsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circus_ImgsUITests.swift; sourceTree = "<group>"; };
 		FA2A21341F52DDDE001A64B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8F76721F737A0700868A94 /* Circus-Imgs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Circus-Imgs.xcdatamodel"; sourceTree = "<group>"; };
+		FA8F76741F737C1900868A94 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataClass.swift"; path = "../Image+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA8F76761F737C2600868A94 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "../Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +120,6 @@
 				FAFB2EC61F4F14B000D947D6 /* View */,
 				FAFB2EC51F4F147C00D947D6 /* Controller */,
 				84694B511F4A86F500AB597C /* AppDelegate.swift */,
-				84694B551F4A86F500AB597C /* Main.storyboard */,
 				84694B581F4A86F500AB597C /* Assets.xcassets */,
 				84694B5A1F4A86F500AB597C /* LaunchScreen.storyboard */,
 				84694B5D1F4A86F500AB597C /* Info.plist */,
@@ -166,6 +171,7 @@
 		FAFB2EC61F4F14B000D947D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84694B551F4A86F500AB597C /* Main.storyboard */,
 				84694B691F4BDD3000AB597C /* CommentsCell.swift */,
 				84B6951B1F5008B300132470 /* MessageCell.swift */,
 				84694B651F4BA16100AB597C /* MyCell.swift */,
@@ -176,6 +182,9 @@
 		FAFB2EC71F4F14D300D947D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA8F76711F737A0700868A94 /* Circus-Imgs.xcdatamodeld */,
+				FA8F76761F737C2600868A94 /* Image+CoreDataProperties.swift */,
+				FA8F76741F737C1900868A94 /* Image+CoreDataClass.swift */,
 				84B695191F5006E200132470 /* Message.swift */,
 				84694B671F4BA3CF00AB597C /* Model.swift */,
 				48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */,
@@ -396,6 +405,8 @@
 			files = (
 				84694B681F4BA3CF00AB597C /* Model.swift in Sources */,
 				84B6951C1F5008B300132470 /* MessageCell.swift in Sources */,
+				FA8F76731F737A0700868A94 /* Circus-Imgs.xcdatamodeld in Sources */,
+				FA8F76751F737C1900868A94 /* Image+CoreDataClass.swift in Sources */,
 				FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */,
 				48A31AF11F6F803B00B406AA /* RESTAPIManager.swift in Sources */,
 				84694B6E1F4BF5E800AB597C /* SearchTableView.swift in Sources */,
@@ -624,6 +635,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA8F76711F737A0700868A94 /* Circus-Imgs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA8F76721F737A0700868A94 /* Circus-Imgs.xcdatamodel */,
+			);
+			currentVersion = FA8F76721F737A0700868A94 /* Circus-Imgs.xcdatamodel */;
+			path = "Circus-Imgs.xcdatamodeld";
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84694B461F4A86F500AB597C /* Project object */;
 }
