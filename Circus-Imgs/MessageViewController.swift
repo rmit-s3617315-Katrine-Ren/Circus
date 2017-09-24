@@ -13,16 +13,22 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var messageView : UITableView!
     @IBOutlet weak var msgTextfield: UITextField!
     @IBOutlet weak var msgSend: UIButton!
-    @IBOutlet weak var msgBoxScroll: UIScrollView!
     
+    var defaultConstraintValue: CGFloat = 0;
+     
+     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        defaultConstraintValue = bottomConstraint.constant;
+         
+         
+         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+         
+         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         
     }
     
@@ -62,25 +68,27 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     //keyboard control
-    func keyboardDidShow(notification: NSNotification) {
+    func keyboardShow(notification: NSNotification) {
         
-        if let activeField = self.msgTextfield, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-            
-            
-            self.msgBoxScroll.contentInset = contentInsets
-            self.msgBoxScroll.scrollIndicatorInsets = contentInsets
-            var aRect = self.view.frame
-            aRect.size.height -= keyboardSize.size.height
-            if (!aRect.contains(activeField.frame.origin)) {
-                self.msgBoxScroll.scrollRectToVisible(activeField.frame, animated: true)
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+         {
+             print("keyboard height!! \(keyboardSize.height)");
+             bottomConstraint.constant = keyboardSize.height + defaultConstraintValue + 44;
+             UIView.animate(withDuration: 0.1)
+             {
+                 self.view.layoutIfNeeded()
             }
+            print("keyboard show!! \(bottomConstraint.constant)");
         }
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
-        let contentInsets = UIEdgeInsets.zero
-        self.msgBoxScroll.contentInset = contentInsets
-        self.msgBoxScroll.scrollIndicatorInsets = contentInsets
-    }
+    func keyboardHide(notification: NSNotification) {
+         
+             bottomConstraint.constant = defaultConstraintValue;
+             UIView.animate(withDuration: 0.1)
+             {
+                 self.view.layoutIfNeeded()
+             }
+             print("keyboard hide!! \(bottomConstraint.constant)");
+         }
 }
