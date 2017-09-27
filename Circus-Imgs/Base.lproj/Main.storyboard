@@ -186,6 +186,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" image="ic_favorite_border"/>
+                                            <connections>
+                                                <action selector="favourite:" destination="hSz-lw-Tzu" eventType="touchUpInside" id="UeO-pr-A8B"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-Wf-Fld" userLabel="CommentButton">
                                             <rect key="frame" x="68" y="254" width="32" height="32"/>
