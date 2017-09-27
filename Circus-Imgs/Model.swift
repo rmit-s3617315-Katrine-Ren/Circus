@@ -26,10 +26,10 @@ class Model
     let managedContext: NSManagedObjectContext
     
     //Create a collection of object to store in database
-    var imageDB = [Image]()
+    var imageDB = [Card]()
     
     //retrieves the image as a 'Image' object and not an 'NSManagedObject'
-    func getImage(_ indexPath:IndexPath)->Image
+    func getImage(_ indexPath:IndexPath)->Card
     {
         return imageDB[indexPath.row]
     }
@@ -60,9 +60,9 @@ class Model
     func getImageFromCoreData()
     {
         do{
-            let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
+            let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
             let results = try managedContext.fetch(fetchResult)
-            imageDB = results as! [Image]
+            imageDB = results as! [Card]
             
         }
         catch let error as NSError {
@@ -71,7 +71,7 @@ class Model
     }
     
     // C: create record in core data
-    func saveImage(image_name:String, image_URL:String, is_Like:Bool, existing:Image?)
+    func saveImage(image_name:String, image_URL:String, is_Like:Bool, existing:Card?)
     {
         let myEntity = NSEntityDescription.entity(forEntityName: "Image", in: managedContext)!
         
@@ -86,7 +86,7 @@ class Model
             //create a new image object and update it with the data pass-in from the View Controler
         else{
             
-            let newImage = Image(entity: myEntity, insertInto: managedContext)
+            let newImage = Card(entity: myEntity, insertInto: managedContext)
             
             if(image_name == ""){
             

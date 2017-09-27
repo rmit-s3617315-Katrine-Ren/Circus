@@ -153,11 +153,11 @@
                             <outlet property="delegate" destination="P57-bt-9ha" id="X4p-XA-pV8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FPt-Hy-6gh"/>
+                    <navigationItem key="navigationItem" title="Favourite" id="FPt-Hy-6gh" userLabel="Favourite"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bO8-mU-blW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4802.3999999999996" y="-513.19340329835086"/>
+            <point key="canvasLocation" x="4348" y="-528.48575712143929"/>
         </scene>
         <!--Images Feed Table View Controller-->
         <scene sceneID="q4F-c9-oFJ">
@@ -187,7 +187,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" image="ic_favorite_border"/>
                                             <connections>
-                                                <segue destination="gCM-HU-euf" kind="show" identifier="likeAndSave" id="goP-tD-B3G"/>
+                                                <action selector="favourite:" destination="hSz-lw-Tzu" eventType="touchUpInside" id="UeO-pr-A8B"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-Wf-Fld" userLabel="CommentButton">
@@ -294,7 +294,7 @@
                     <connections>
                         <segue destination="Jib-fk-Lfh" kind="relationship" relationship="viewControllers" id="Rbu-bU-WKY"/>
                         <segue destination="m6K-dB-NJl" kind="relationship" relationship="viewControllers" id="WEf-4U-U2M"/>
-                        <segue destination="rwi-9m-vQ1" kind="relationship" relationship="viewControllers" id="DiA-sD-83i"/>
+                        <segue destination="TZM-2D-fIQ" kind="relationship" relationship="viewControllers" id="7Np-Og-7cL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8I-RZ-DDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,23 +481,24 @@
             </objects>
             <point key="canvasLocation" x="196" y="375.56221889055473"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kB9-JC-6td">
+        <!--Favourite-->
+        <scene sceneID="gPv-JV-Jxr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gCM-HU-euf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZM-2D-fIQ" userLabel="Favourite" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourite" image="ic_favorite_border" id="Dcw-pf-PsD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfO-OL-TUl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cQT-3T-VRA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="P57-bt-9ha" kind="relationship" relationship="rootViewController" id="lTa-Lj-8N7"/>
+                        <segue destination="P57-bt-9ha" kind="relationship" relationship="rootViewController" id="LRC-vJ-mzx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GTU-Tg-XEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ata-Yr-2MO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3863.1999999999998" y="-513.19340329835086"/>
+            <point key="canvasLocation" x="3408.8000000000002" y="-528.48575712143929"/>
         </scene>
     </scenes>
     <resources>
