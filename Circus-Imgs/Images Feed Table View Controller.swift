@@ -7,69 +7,186 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+    //move to Model
+    let apiKey = "c21fa3df81455afb0cd447e13ea34179"
+
 
 class ImagesFeedTableViewController: UITableViewController {
     
-
     
-    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.tableView.contentInset = UIEdgeInsetsMake(30,0,0,0)
-        
+        downloadJSON()
+    }
 
-    }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+
+
     
-    
+    //TableView
     override func numberOfSections(in tableView: UITableView) -> Int {
+        //one column
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        //returns array of images from model
-        return Model.get.images.count;
-    }
     
+        //returns a set of images each load
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        
+        return photosArray.count
+        //when JSON is in Model
+        //return Model.get.photosArray.count
+
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageFD", for: indexPath) as! MyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! MyCell
         
-        //image description
-        cell.labelRight?.text = Model.get.images[indexPath.row];
-       
-        //image
-        cell.myImage.image = UIImage(named: Model.get.images[indexPath.row])
+        let photo = photosArray[indexPath.row]
         
+        //when JSON is in Model
+        //let photo = Model.get.photosArray[indexPath.row]
+        
+        cell.labelRight.text = photo.photoTitle
+        
+    
+        let imgLink = URL(string: photo.photoURL)
+        
+        if (imgLink != nil) {
+            let data = NSData(contentsOf: (imgLink)!)
+            cell.myImage.image = UIImage(data: data! as Data)
+        }
+ 
         return cell
     }
     
     
-    //function to get 5 images to default feed
+    //For DetailView after Image is tapped
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+
+    }
     
-    //function to get 10 more new images when scrolled (gesture)
+
+    
+    //REST API Call - move to Model
+    final let urlString = "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=\(apiKey)&extras=geo%2C+tags%2C+machine_tags%2C+url_z&format=json&nojsoncallback=1"
+    
+    //create Photos array from Model
+    var photosArray = [Photos]()
     
     
-    /*
-    
-    //https://medium.com/@petrosdemetrakopoulos/creating-a-rest-api-manager-in-swift-4cd610699bed
-    func getRESTData(){
+    //DOWNLOAD JSON- move to model
+    func downloadJSON()
+    {
         
-        RESTAPIManager.sharedInstance.getPostWithId(postId: 1, onSuccess: { json in
-            DispatchQueue.main.async {
-                cell.myImage?.image = UIImage(describing: json)//String(describing: json) //change String to img
+        let url = URL(string: urlString)
+        
+        var downloadTask = URLRequest(url: url!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 5)
+        
+        downloadTask.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: downloadTask, completionHandler: {(data, response, error) -> Void in
+            
+            let jsonData: JSON? = JSON(data!)
+            if (jsonData != nil)
+            {
+                let photos = jsonData?["photos"].dictionaryValue
+                //print(photos!)
+                
+                for (key, element) in photos!
+                {
+                    if (key == "photo")
+                    {
+                        for item in element.arrayValue
+                        {
+                            let urlStr: String = {
+                                if let photoURL = item["url_z"].string {
+                                    return photoURL as! String
+                                }
+                                return "Not Found"
+                            }()
+                            
+                            let titleStr: String = {
+                                if let photoTitle = item["title"].string {
+                                    return photoTitle as! String
+                                }
+                                return "Untitled"
+                            }()
+                            
+                            let placeIDStr: String = {
+                                if let placeID = item["place_id"].string {
+                                    return placeID as! String
+                                }
+                                return "Not Found"
+                            }()
+                            
+                            let latStr: String = {
+                                if let photoLat = item["latitude"].string {
+                                    return photoLat as! String
+                                }
+                                return "Not Found"
+                            }()
+                            
+                            let longStr: String = {
+                                if let photoLong = item["longitude"].string {
+                                    return photoLong as! String
+                                }
+                                return "Not Found"
+                            }()
+                            
+                            //append to local array
+                            // photoTitle.append(item["title"].stringValue)
+                            // photoURL.append(item["url_z"].stringValue)
+                            
+                            //self.photoTags.append(item["tags"].stringValue)
+                            //self.photoLong.append(item["longtitude"].stringValue)
+                            //self.photoLat.append(item["latitude"].stringValue)
+                            
+                            
+                            print("__________________")
+                            print(item["title"])
+                            print(item["longitude"])
+                            print(item["latitude"])
+                            print(item["tags"])
+                            print(item["url_z"])
+                            //append
+                            
+                            
+                            self.photosArray.append(Photos(photoURL: urlStr, photoTitle: titleStr, placeID: placeIDStr, photoLat: latStr, photoLong: longStr))
+                            
+                            
+                        }
+                    }
+                }
+                
+                OperationQueue.main.addOperation(
+                    {
+                        
+                        //update table here....!
+                        self.tableView.reloadData()
+                })
+                
             }
-            }, onFailure: { error in
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert) alert.addAction(UIAlertAction(title: "Dismiss", style: .default,  handler: nil))
-            self.show(alert, sender: nil)
-        })
-        }
-*/
+            
+        }).resume()
+        
+    }
+
+    
 }
+    
+    //TO DO
+    //function to get 10 images to default feed
+    //function to get 10 more new images when scrolled (gesture)
+
+ 

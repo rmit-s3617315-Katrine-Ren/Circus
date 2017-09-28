@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		489A45621F70A6DD0007015F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489A45601F709C740007015F /* SwiftyJSON.framework */; };
-		48A31AF11F6F803B00B406AA /* RESTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */; };
+		48B7E3F91F7B2CFB001E74A2 /* CODE DUMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7E3F81F7B2CFB001E74A2 /* CODE DUMP.swift */; };
 		84694B521F4A86F500AB597C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84694B511F4A86F500AB597C /* AppDelegate.swift */; };
 		84694B541F4A86F500AB597C /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84694B531F4A86F500AB597C /* CommentsViewController.swift */; };
 		84694B571F4A86F500AB597C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84694B551F4A86F500AB597C /* Main.storyboard */; };
@@ -26,7 +26,6 @@
 		FA2A21331F52DDDE001A64B5 /* Circus_ImgsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A21321F52DDDE001A64B5 /* Circus_ImgsUITests.swift */; };
 		FA8F76731F737A0700868A94 /* Circus-Imgs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76711F737A0700868A94 /* Circus-Imgs.xcdatamodeld */; };
 		FA8F76751F737C1900868A94 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76741F737C1900868A94 /* Image+CoreDataClass.swift */; };
-		FA8F76771F737C2600868A94 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76761F737C2600868A94 /* Image+CoreDataProperties.swift */; };
 		FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		489A45601F709C740007015F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Circus-Imgs-fhyyogvfugwymqcdkjshaxejnewb/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTAPIManager.swift; sourceTree = "<group>"; };
+		48B7E3F81F7B2CFB001E74A2 /* CODE DUMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CODE DUMP.swift"; sourceTree = "<group>"; };
 		84694B4E1F4A86F500AB597C /* Circus-Imgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Circus-Imgs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84694B511F4A86F500AB597C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84694B531F4A86F500AB597C /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		84694B501F4A86F500AB597C /* Circus-Imgs */ = {
 			isa = PBXGroup;
 			children = (
+				48B7E3F81F7B2CFB001E74A2 /* CODE DUMP.swift */,
 				FAFB2EC71F4F14D300D947D6 /* Model */,
 				FAFB2EC61F4F14B000D947D6 /* View */,
 				FAFB2EC51F4F147C00D947D6 /* Controller */,
@@ -187,7 +187,6 @@
 				FA8F76741F737C1900868A94 /* Image+CoreDataClass.swift */,
 				84B695191F5006E200132470 /* Message.swift */,
 				84694B671F4BA3CF00AB597C /* Model.swift */,
-				48A31AF01F6F803B00B406AA /* RESTAPIManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -408,12 +407,12 @@
 				FA8F76731F737A0700868A94 /* Circus-Imgs.xcdatamodeld in Sources */,
 				FA8F76751F737C1900868A94 /* Image+CoreDataClass.swift in Sources */,
 				FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */,
-				48A31AF11F6F803B00B406AA /* RESTAPIManager.swift in Sources */,
 				84694B6E1F4BF5E800AB597C /* SearchTableView.swift in Sources */,
 				84694B6A1F4BDD3000AB597C /* CommentsCell.swift in Sources */,
 				84694B641F4A89E200AB597C /* Images Feed Table View Controller.swift in Sources */,
 				84694B661F4BA16100AB597C /* MyCell.swift in Sources */,
 				84694B541F4A86F500AB597C /* CommentsViewController.swift in Sources */,
+				48B7E3F91F7B2CFB001E74A2 /* CODE DUMP.swift in Sources */,
 				84B6951A1F5006E200132470 /* Message.swift in Sources */,
 				84694B521F4A86F500AB597C /* AppDelegate.swift in Sources */,
 			);
