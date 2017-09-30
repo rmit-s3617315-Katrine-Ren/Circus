@@ -144,6 +144,13 @@ class ImagesFeedTableViewController: UITableViewController {
                                 return "Not Found"
                             }()
                             
+                            let tagsStr: String = {
+                                if let photoTags = item["tags"].string {
+                                    return photoTags as! String
+                                }
+                                return "Not Found"
+                            }()
+                            
                             //append to local array
                             // photoTitle.append(item["title"].stringValue)
                             // photoURL.append(item["url_z"].stringValue)
@@ -162,7 +169,7 @@ class ImagesFeedTableViewController: UITableViewController {
                             //append
                             
                             
-                            self.photosArray.append(Photos(photoURL: urlStr, photoTitle: titleStr, placeID: placeIDStr, photoLat: latStr, photoLong: longStr))
+                            self.photosArray.append(Photos(photoURL: urlStr, photoTitle: titleStr, placeID: placeIDStr, photoLat: latStr, photoLong: longStr, photoTags: tagsStr))
                             
                             
                         }

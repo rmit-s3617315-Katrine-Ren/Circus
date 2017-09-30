@@ -49,14 +49,16 @@ struct Photos {
     let placeID : String
     let photoLat : String
     let photoLong : String
+    let photoTags: String
     
     
-    init (photoURL:String, photoTitle:String, placeID:String, photoLat:String, photoLong:String) {
+    init (photoURL:String, photoTitle:String, placeID:String, photoLat:String, photoLong:String, photoTags:String) {
         self.photoURL = photoURL
         self.photoTitle = photoTitle
         self.placeID = placeID
         self.photoLat = photoLat
         self.photoLong = photoLong
+        self.photoTags = photoTags
         
     }
 }
