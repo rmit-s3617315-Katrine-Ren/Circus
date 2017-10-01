@@ -15,6 +15,11 @@ import SwiftyJSON
 
 class ImagesFeedTableViewController: UITableViewController {
     
+    @IBAction func favourite(_ sender: Any) {
+       // Model.get.saveMovie(	name.text!, subtitle: desc.text, imageName: imageName.text!, existing: currentMovie)
+        
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
     override func viewDidLoad()
     {
