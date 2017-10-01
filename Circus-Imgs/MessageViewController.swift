@@ -15,19 +15,19 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var msgSend: UIButton!
     
     var defaultConstraintValue: CGFloat = 0;
-     
-     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         defaultConstraintValue = bottomConstraint.constant;
-         
-         
-         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-         
-         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         
     }
@@ -71,24 +71,24 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     func keyboardShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-         {
-             print("keyboard height!! \(keyboardSize.height)");
-             bottomConstraint.constant = keyboardSize.height + defaultConstraintValue + 44;
-             UIView.animate(withDuration: 0.1)
-             {
-                 self.view.layoutIfNeeded()
+        {
+            print("keyboard height!! \(keyboardSize.height)");
+            bottomConstraint.constant = keyboardSize.height + defaultConstraintValue + 44;
+            UIView.animate(withDuration: 0.1)
+            {
+                self.view.layoutIfNeeded()
             }
             print("keyboard show!! \(bottomConstraint.constant)");
         }
     }
     
     func keyboardHide(notification: NSNotification) {
-         
-             bottomConstraint.constant = defaultConstraintValue;
-             UIView.animate(withDuration: 0.1)
-             {
-                 self.view.layoutIfNeeded()
-             }
-             print("keyboard hide!! \(bottomConstraint.constant)");
-         }
+        
+            bottomConstraint.constant = defaultConstraintValue;
+            UIView.animate(withDuration: 0.1)
+            {
+                self.view.layoutIfNeeded()
+            }
+            print("keyboard hide!! \(bottomConstraint.constant)");
+        }
 }
