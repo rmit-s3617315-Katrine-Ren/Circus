@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
-import SwiftyJSON
+//import SwiftyJSON
 
 //Rest API KEY Goes here
 

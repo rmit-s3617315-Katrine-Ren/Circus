@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fWa-tc-XK0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fWa-tc-XK0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,7 +54,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YxQ-LX-Lqn" id="aNJ-mw-z87">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yR7-Ry-csw" userLabel="User Profile Image">
@@ -130,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cnr-tm-uSl" id="rXn-da-YbB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-Rt-Jj5">
@@ -146,6 +146,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="q0h-9U-O6n" kind="showDetail" id="Krd-kv-nNR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -153,6 +156,7 @@
                             <outlet property="delegate" destination="P57-bt-9ha" id="X4p-XA-pV8"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Favourite" image="ic_favorite_border" id="Qkh-SP-HLr"/>
                     <navigationItem key="navigationItem" title="Favourite" id="FPt-Hy-6gh" userLabel="Favourite"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bO8-mU-blW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="l1F-bI-QMY" id="Ykc-84-Nt6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="04k-rG-54f">
@@ -325,9 +329,7 @@
                     <connections>
                         <segue destination="Jib-fk-Lfh" kind="relationship" relationship="viewControllers" id="Rbu-bU-WKY"/>
                         <segue destination="m6K-dB-NJl" kind="relationship" relationship="viewControllers" id="WEf-4U-U2M"/>
-
-                        <segue destination="TZM-2D-fIQ" kind="relationship" relationship="viewControllers" id="7Np-Og-7cL"/>
-
+                        <segue destination="P57-bt-9ha" kind="relationship" relationship="viewControllers" id="o8v-9Y-Aco"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8I-RZ-DDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,7 +343,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="yrV-1p-e2L" userLabel="Home"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y1I-32-3MA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -360,7 +362,7 @@
                     <tabBarItem key="tabBarItem" title="Search" image="ic_search" id="gEw-IU-TU3" userLabel="Search"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7s5-jr-2Uz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -386,7 +388,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YyG-ry-7Sy">
                                 <rect key="frame" x="16" y="623" width="282" height="30"/>
-
                                 <constraints>
                                     <constraint firstAttribute="width" constant="282" id="LWI-aU-zra"/>
                                 </constraints>
@@ -395,18 +396,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NE-BH-zFz">
-
-                               <rect key="frame" x="313" y="623" width="46" height="30"/>
-
+                                <rect key="frame" x="313" y="623" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="OSd-Ix-4dj"/>
                                 </constraints>
                                 <state key="normal" title="send"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bUO-Sg-IKX">
-
                                 <rect key="frame" x="0.0" y="72" width="375" height="543"/>
-
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="OUK-5q-Tcs"/>
@@ -416,7 +413,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQS-9h-Bu4" id="JJz-Pj-FQT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMd-Fp-F0q">
@@ -519,25 +516,6 @@
             </objects>
             <point key="canvasLocation" x="1690" y="813"/>
         </scene>
-        <!--Favourite-->
-        <scene sceneID="gPv-JV-Jxr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZM-2D-fIQ" userLabel="Favourite" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourite" image="ic_favorite_border" id="Dcw-pf-PsD"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cQT-3T-VRA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="P57-bt-9ha" kind="relationship" relationship="rootViewController" id="LRC-vJ-mzx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ata-Yr-2MO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3408.8000000000002" y="-528.48575712143929"/>
-        </scene>
     </scenes>
     <resources>
         <image name="ic_chat" width="24" height="24"/>
@@ -547,4 +525,7 @@
         <image name="ic_search" width="24" height="24"/>
         <image name="ic_share" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Krd-kv-nNR"/>
+    </inferredMetricsTieBreakers>
 </document>
