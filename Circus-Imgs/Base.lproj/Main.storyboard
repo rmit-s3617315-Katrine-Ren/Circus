@@ -191,6 +191,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" image="ic_favorite_border"/>
                                             <connections>
+                                                <action selector="favourite:" destination="l1F-bI-QMY" eventType="touchUpInside" id="UWP-qo-0rc"/>
                                                 <action selector="favourite:" destination="hSz-lw-Tzu" eventType="touchUpInside" id="UeO-pr-A8B"/>
                                             </connections>
                                         </button>
@@ -526,6 +527,6 @@
         <image name="ic_share" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Krd-kv-nNR"/>
+        <segue reference="waI-dj-ReQ"/>
     </inferredMetricsTieBreakers>
 </document>
