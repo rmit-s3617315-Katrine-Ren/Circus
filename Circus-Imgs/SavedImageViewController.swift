@@ -9,12 +9,23 @@
 import Foundation
 import UIKit
 
-class SavedImageViewController: UITableViewController{
+class SavedImageViewController: UITableViewController
+{
     
-    var model = Model.get
+    //var model = Model.get
     
     // MARK: - Prepare data for display
     // Make sure the latest data is displayed when the view is displayed
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        Model.get.getImageFromCoreData();
+        print("Loading image from core data")
+        print(Model.get.imageDB.count)
+        
+    }
+    
     override func  viewDidAppear(_ animated: Bool)
     {
         self.tableView.reloadData()
@@ -24,24 +35,30 @@ class SavedImageViewController: UITableViewController{
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        model.getImageFromCoreData()
     }
 
     
     // MARK: - Populate the table view
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return model.imageDB.count
+        return Model.get.imageDB.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "savedImageCell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "savedImageCell", for: indexPath) as! SavedImageCell
         
-        let display = model.getImage(indexPath)
-        cell.textLabel!.text = display.imageName
-        cell.imageView!.image = UIImage(named: display.imageName!)
-        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        let displayCard = Model.get.getImage(indexPath)
+        cell.imgName.text = displayCard.imageName
+        
+        let imgLink = URL(string: displayCard.imageURL!)
+        
+        if (imgLink != nil) {
+            let data = NSData(contentsOf: (imgLink)!)
+            cell.imgSmall.image = UIImage(data: data! as Data)
+        }
+        //cell.imageView!.image = UIImage(named: displayCard.imageName!)
+        //cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
         return cell
     }
@@ -56,7 +73,7 @@ class SavedImageViewController: UITableViewController{
     // System method that gets called when delete is selected
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        model.deleteImage(indexPath)
+        Model.get.deleteImage(indexPath)
         //model.imageDB.remove(at: indexPath.row)
         
         self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
@@ -65,11 +82,6 @@ class SavedImageViewController: UITableViewController{
     
     
     // MARK: - Table view system methods
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-    }
     
     override func didReceiveMemoryWarning()
     {

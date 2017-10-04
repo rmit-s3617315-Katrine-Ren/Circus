@@ -28,6 +28,7 @@
 		FAF83BE91F831EC800773399 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BE81F831EC800773399 /* ImageDetailView.swift */; };
 		FAF83BEA1F831F8400773399 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF83BEB1F831F8400773399 /* SwiftyJSON.framework */; };
 		FAF83BED1F831FEE00773399 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF83BEC1F831FEE00773399 /* MapKit.framework */; };
+		FAF83BEF1F849F3A00773399 /* SavedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */; };
 		FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		FAF83BE81F831EC800773399 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		FAF83BEB1F831F8400773399 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF83BEC1F831FEE00773399 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedImageCell.swift; sourceTree = "<group>"; };
 		FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				84694B691F4BDD3000AB597C /* CommentsCell.swift */,
 				84B6951B1F5008B300132470 /* MessageCell.swift */,
 				84694B651F4BA16100AB597C /* MyCell.swift */,
+				FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				FA8F76791F77835000868A94 /* SavedImageViewController.swift in Sources */,
 				FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */,
 				84694B6E1F4BF5E800AB597C /* SearchTableView.swift in Sources */,
+				FAF83BEF1F849F3A00773399 /* SavedImageCell.swift in Sources */,
 				84694B6A1F4BDD3000AB597C /* CommentsCell.swift in Sources */,
 				84694B641F4A89E200AB597C /* Images Feed Table View Controller.swift in Sources */,
 				84694B661F4BA16100AB597C /* MyCell.swift in Sources */,

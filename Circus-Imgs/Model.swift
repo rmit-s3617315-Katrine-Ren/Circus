@@ -17,7 +17,7 @@ let apiKey = "c21fa3df81455afb0cd447e13ea34179"
 
 class Model
 {
-    static var get: Model = Model()
+    static var get:Model = Model()
     
 
     private init()
@@ -46,7 +46,9 @@ class Model
     // U: tackle updating in core data
     func updateDatabase(){
         do{
-            try managedContext.save()}
+            try managedContext.save()
+            
+        }
         catch let error as NSError{
             print ("Could not save \(error), \(error.userInfo)")
         }
@@ -79,7 +81,7 @@ class Model
     // C: create record in core data
     func saveImage(image_name:String, image_URL:String, is_Like:Bool, existing:Card?)
     {
-        let myEntity = NSEntityDescription.entity(forEntityName: "Card", in: managedContext)!
+        //let myEntity = NSEntityDescription.entity(forEntityName: "Card", in: managedContext)!
         
         //if existing is not nill then keep updating the moive
         if let _ = existing
@@ -92,21 +94,21 @@ class Model
             //create a new card object and update it with the data pass-in from the View Controler
         else{
             
-            let newImage = Card(entity: myEntity, insertInto: managedContext)
+            let newCard = Card(context: managedContext)
             
             if(image_name == ""){
             
-                newImage.imageName = "default"
+                newCard.imageName = "default"
             }
             else{
                 
-            newImage.setValue(image_name, forKey: "imageName")
+            newCard.setValue(image_name, forKey: "imageName")
                 
             }
             
-            newImage.setValue(image_URL, forKey: "imageURL")
-            newImage.setValue(is_Like, forKey: "isLike")
-            imageDB.append(newImage)
+            newCard.setValue(image_URL, forKey: "imageURL")
+            newCard.setValue(is_Like, forKey: "isLike")
+            imageDB.append(newCard)
         
         updateDatabase()
     }
