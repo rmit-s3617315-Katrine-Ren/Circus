@@ -15,6 +15,14 @@ let dataModelDidUpdateNotif = "dataModelDidUpdateNotif"
 
 class ImagesFeedTableViewController: UITableViewController {
     
+    
+    
+    //observers
+    func createObeservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getDataUpdate), name: NSNotification.Name(rawValue: dataModelDidUpdateNotif), object: nil)
+    }
+    
+    
     //handle observer
     let loadedData = Notification.Name(rawValue: dataModelDidUpdateNotif)
     
@@ -29,11 +37,7 @@ class ImagesFeedTableViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsetsMake(30,0,0,0)
         Model.get.downloadJSON()
         createObeservers()
-    }
-
-    //observers
-    func createObeservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(getDataUpdate), name: NSNotification.Name(rawValue: dataModelDidUpdateNotif), object: nil)
+    
     }
     
     
@@ -71,16 +75,18 @@ class ImagesFeedTableViewController: UITableViewController {
         
     }
     
+   
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! MyCell
         
-        //let photo = photosArray[indexPath.row]
         
         //when JSON is in Model
         let photo = Model.get.photosArray[indexPath.row]
         
         cell.labelRight.text = photo.photoTitle
+        cell.index = indexPath.row;
         
         
         let imgLink = URL(string: photo.photoURL)
@@ -110,9 +116,6 @@ class ImagesFeedTableViewController: UITableViewController {
             }
         }
     }
-    
-
-    
     
 
     

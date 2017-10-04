@@ -120,13 +120,13 @@
         <!--Saved Image-->
         <scene sceneID="tVI-ZP-Fpr">
             <objects>
-                <tableViewController id="P57-bt-9ha" userLabel="Saved Image" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="IeF-AE-cOf">
+                <tableViewController id="P57-bt-9ha" userLabel="Saved Image" customClass="SavedImageViewController" customModule="Circus_Imgs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="IeF-AE-cOf" userLabel="Saved Img Table">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedImageCell" rowHeight="52" id="Cnr-tm-uSl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedImageCell" rowHeight="52" id="Cnr-tm-uSl" customClass="SavedImageCell" customModule="Circus_Imgs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cnr-tm-uSl" id="rXn-da-YbB">
@@ -147,12 +147,14 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imgName" destination="8VD-3f-ZaY" id="oNw-vA-stl"/>
+                                    <outlet property="imgSmall" destination="cXW-Rt-Jj5" id="KtH-lC-RUn"/>
                                     <segue destination="q0h-9U-O6n" kind="showDetail" id="Krd-kv-nNR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="P57-bt-9ha" id="gSN-1S-Jrs"/>
+                            <outlet property="dataSource" destination="P57-bt-9ha" id="Qzu-Ph-KVT"/>
                             <outlet property="delegate" destination="P57-bt-9ha" id="X4p-XA-pV8"/>
                         </connections>
                     </tableView>
@@ -191,8 +193,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" image="ic_favorite_border"/>
                                             <connections>
-                                                <action selector="favourite:" destination="l1F-bI-QMY" eventType="touchUpInside" id="UWP-qo-0rc"/>
-                                                <action selector="favourite:" destination="hSz-lw-Tzu" eventType="touchUpInside" id="UeO-pr-A8B"/>
+                                                <action selector="favourite:" destination="l1F-bI-QMY" eventType="touchUpInside" id="Z67-EM-WLK"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-Wf-Fld" userLabel="CommentButton">
@@ -527,6 +528,6 @@
         <image name="ic_share" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="waI-dj-ReQ"/>
+        <segue reference="Krd-kv-nNR"/>
     </inferredMetricsTieBreakers>
 </document>

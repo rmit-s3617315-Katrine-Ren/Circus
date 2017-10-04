@@ -18,34 +18,26 @@ class MyCell: UITableViewCell
     @IBOutlet weak var shareButton: UIButton!;
     @IBOutlet weak var commentButton: UIButton!;
     
-    var currentPhoto : Photos!
-    var card : Card? //not finished!
-    
+    var index: Int!;
     
     @IBAction func favourite(_ sender: Any) {
+        
+        var currentPhoto : Photos?
+        var pName : String!
+        var pUrl : String!
+        let flag:Bool! = true
+        var currentCard : Card?
+        
+        print(Model.get.photosArray.count)
+        currentPhoto = Model.get.photosArray[index]
         if let _ = currentPhoto
         {
-           let pName = currentPhoto.photoTitle
-           let pUrl = currentPhoto.photoURL
-           let flag = true
-            
-        Model.get.saveImage(image_name: pName, image_URL: pUrl, is_Like: flag, existing: card)
-            
+            pName = currentPhoto!.photoTitle
+            pUrl = currentPhoto!.photoURL
         }
         
+        Model.get.saveImage(image_name: pName, image_URL: pUrl, is_Like: flag, existing: currentCard)
+        print(Model.get.imageDB.count)
     }
-    //Save button, call model.saveImage(...) here
-    
-    /**
-     var currentPhoto : Photos!
-    @IBAction func favourite(_ sender: Any) {
-        if let _ = currentPhoto
-        {
-            Model.get.saveImage(image_name: currentPhoto.photoTitle, image_URL: currentPhoto.photoURL, is_Like: true, existing: <#T##Card?#>)
-        }
-        
-        
-        self.navigationController?.popToRootViewController(animated: true)
-    } */
-    
+
 }
