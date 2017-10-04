@@ -29,6 +29,7 @@
 		FAF83BEA1F831F8400773399 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF83BEB1F831F8400773399 /* SwiftyJSON.framework */; };
 		FAF83BED1F831FEE00773399 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF83BEC1F831FEE00773399 /* MapKit.framework */; };
 		FAF83BEF1F849F3A00773399 /* SavedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */; };
+		FAF83BF11F84C33700773399 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BF01F84C33700773399 /* Alert.swift */; };
 		FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		FAF83BEB1F831F8400773399 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF83BEC1F831FEE00773399 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedImageCell.swift; sourceTree = "<group>"; };
+		FAF83BF01F84C33700773399 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				84B6951B1F5008B300132470 /* MessageCell.swift */,
 				84694B651F4BA16100AB597C /* MyCell.swift */,
 				FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */,
+				FAF83BF01F84C33700773399 /* Alert.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				84694B541F4A86F500AB597C /* CommentsViewController.swift in Sources */,
 				48B7E3F91F7B2CFB001E74A2 /* CODE DUMP.swift in Sources */,
 				84B6951A1F5006E200132470 /* Message.swift in Sources */,
+				FAF83BF11F84C33700773399 /* Alert.swift in Sources */,
 				84694B521F4A86F500AB597C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

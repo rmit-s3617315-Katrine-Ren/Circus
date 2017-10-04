@@ -40,6 +40,21 @@ class Model
         return imageDB[indexPath.row]
     }
     
+    //retrieves the URLs of image in core data
+    func getURLfromDB() -> [String]
+    {
+        var urlList = [String]()
+        for savedPhoto in imageDB {
+            
+            urlList.append(savedPhoto.imageURL!)
+        }
+        
+        return urlList
+    }
+    
+    
+    
+    
     
     // MARK : CORE DATA PART --CRUD
     
