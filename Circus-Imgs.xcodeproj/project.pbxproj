@@ -25,11 +25,11 @@
 		FA2A21331F52DDDE001A64B5 /* Circus_ImgsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A21321F52DDDE001A64B5 /* Circus_ImgsUITests.swift */; };
 		FA8F76731F737A0700868A94 /* Circus-Imgs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76711F737A0700868A94 /* Circus-Imgs.xcdatamodeld */; };
 		FA8F76791F77835000868A94 /* SavedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F76781F77835000868A94 /* SavedImageViewController.swift */; };
+		FAF702821F87558B00B936EC /* FavImgDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF702811F87558B00B936EC /* FavImgDetailViewController.swift */; };
 		FAF83BE91F831EC800773399 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BE81F831EC800773399 /* ImageDetailView.swift */; };
 		FAF83BEA1F831F8400773399 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF83BEB1F831F8400773399 /* SwiftyJSON.framework */; };
 		FAF83BED1F831FEE00773399 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF83BEC1F831FEE00773399 /* MapKit.framework */; };
 		FAF83BEF1F849F3A00773399 /* SavedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */; };
-		FAF83BF11F84C33700773399 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83BF01F84C33700773399 /* Alert.swift */; };
 		FAFB2ECB1F4F166F00D947D6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,11 +71,11 @@
 		FA2A21341F52DDDE001A64B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8F76721F737A0700868A94 /* Circus-Imgs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Circus-Imgs.xcdatamodel"; sourceTree = "<group>"; };
 		FA8F76781F77835000868A94 /* SavedImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedImageViewController.swift; sourceTree = "<group>"; };
+		FAF702811F87558B00B936EC /* FavImgDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavImgDetailViewController.swift; sourceTree = "<group>"; };
 		FAF83BE81F831EC800773399 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		FAF83BEB1F831F8400773399 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF83BEC1F831FEE00773399 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedImageCell.swift; sourceTree = "<group>"; };
-		FAF83BF01F84C33700773399 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +177,7 @@
 				FAFB2ECA1F4F166F00D947D6 /* MessageViewController.swift */,
 				FA8F76781F77835000868A94 /* SavedImageViewController.swift */,
 				FAF83BE81F831EC800773399 /* ImageDetailView.swift */,
+				FAF702811F87558B00B936EC /* FavImgDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,7 +190,6 @@
 				84B6951B1F5008B300132470 /* MessageCell.swift */,
 				84694B651F4BA16100AB597C /* MyCell.swift */,
 				FAF83BEE1F849F3A00773399 /* SavedImageCell.swift */,
-				FAF83BF01F84C33700773399 /* Alert.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -434,7 +434,7 @@
 				84694B541F4A86F500AB597C /* CommentsViewController.swift in Sources */,
 				48B7E3F91F7B2CFB001E74A2 /* CODE DUMP.swift in Sources */,
 				84B6951A1F5006E200132470 /* Message.swift in Sources */,
-				FAF83BF11F84C33700773399 /* Alert.swift in Sources */,
+				FAF702821F87558B00B936EC /* FavImgDetailViewController.swift in Sources */,
 				84694B521F4A86F500AB597C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

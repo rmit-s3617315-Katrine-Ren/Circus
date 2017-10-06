@@ -94,7 +94,7 @@ class Model
     }
     
     // C: create record in core data
-    func saveImage(image_name:String, image_URL:String, is_Like:Bool, existing:Card?)
+    func saveImage(image_name:String, image_URL:String, image_lat:String, image_long:String,is_Like:Bool, existing:Card?)
     {
         //let myEntity = NSEntityDescription.entity(forEntityName: "Card", in: managedContext)!
         
@@ -104,6 +104,8 @@ class Model
             existing!.imageName = image_name
             existing!.imageURL = image_URL
             existing!.isLike = is_Like
+            existing!.imageLat = image_lat
+            existing!.imageLong = image_long
         }
             
             //create a new card object and update it with the data pass-in from the View Controler
@@ -123,6 +125,8 @@ class Model
             
             newCard.setValue(image_URL, forKey: "imageURL")
             newCard.setValue(is_Like, forKey: "isLike")
+            newCard.setValue(image_lat, forKey: "imageLat")
+            newCard.setValue(image_long, forKey: "imageLong")
             imageDB.append(newCard)
         
         updateDatabase()

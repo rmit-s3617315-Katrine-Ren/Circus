@@ -90,5 +90,32 @@ class SavedImageViewController: UITableViewController
     }
 
     
+    // MARK: -Prepare data to image detail view
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let detailsVC: FavImgDetailViewController = segue.destination as! FavImgDetailViewController
+        
+        if segue.identifier == "displaySavedImg"
+        {
+            if let selectedRowIndexPath = tableView.indexPathForSelectedRow
+            {
+                let selectedCard = Model.get.imageDB[selectedRowIndexPath.row]
+                //let photo = photosArray[selectedRowIndexPath.row]
+                detailsVC.photoURL = selectedCard.imageURL
+                detailsVC.photoTitle = selectedCard.imageName
+                
+                if selectedCard.imageLong != nil {
+                detailsVC.photoLat = selectedCard.imageLat
+                detailsVC.photoLong = selectedCard.imageLong
+                }
+                    
+                else{
+                detailsVC.photoLat = "0"
+                detailsVC.photoLong = "0"
+                    
+                }
+            }
+        }
+    }
     
 }

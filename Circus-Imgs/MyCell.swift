@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MyCell: UITableViewCell, UIAlertViewDelegate
+class MyCell: UITableViewCell
 {
     @IBOutlet weak var myImage: UIImageView!;
     @IBOutlet weak var labelRight: UILabel!;
@@ -19,7 +19,7 @@ class MyCell: UITableViewCell, UIAlertViewDelegate
     @IBOutlet weak var commentButton: UIButton!;
     
     var index: Int!;
-    var alertMessage : Alert! = nil
+    
     
     @IBAction func favourite(_ sender: Any) {
         
@@ -28,6 +28,8 @@ class MyCell: UITableViewCell, UIAlertViewDelegate
         var pUrl : String!
         let flag:Bool! = true
         var currentCard : Card?
+        var pLat : String!
+        var pLong : String!
         
         //print(Model.get.photosArray.count)
         currentPhoto = Model.get.photosArray[index]
@@ -35,26 +37,42 @@ class MyCell: UITableViewCell, UIAlertViewDelegate
         {
             pName = currentPhoto!.photoTitle
             pUrl = currentPhoto!.photoURL
+            pLat = currentPhoto!.photoLat
+            pLong = currentPhoto!.photoLong
         }
         
         //check if the URL already exist in the imageDB
         Model.get.getImageFromCoreData()
         if !Model.get.getURLfromDB().contains(pUrl){
             
-        Model.get.saveImage(image_name: pName, image_URL: pUrl, is_Like: flag, existing: currentCard)
+            Model.get.saveImage(image_name: pName, image_URL: pUrl, image_lat: pLat, image_long: pLong, is_Like: flag, existing: currentCard)
+            likeButton.setImage(UIImage(named: "red_ic_favorite_border"), for: .normal)
             
         }
         
         else {
-            alertMessage = UIAlertController(title: "Notice", message:
-                "The image has been liked", preferredStyle: UIAlertControllerStyle.alert) as! Alert
             
-            alertMessage.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.alertMessage.present(alertMessage, animated: true, completion: nil)
+            //showAlert()
+            print("The message has been liked")
         }
         print(Model.get.imageDB.count)
    
     }
+    
+    
+    //Display the alert view
+    func showAlert()
+        
+    {
+        
+        let alertMessage = UIAlertController(title: "Notice", message:
+            "The image has been liked!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertMessage.addAction(UIAlertAction(title: "Got it", style: UIAlertActionStyle.default,handler: nil))
+        
+        alertMessage.present(alertMessage, animated: true, completion: nil)
+        
+    }
+
 
 }

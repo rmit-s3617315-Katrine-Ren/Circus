@@ -96,9 +96,24 @@ class ImagesFeedTableViewController: UITableViewController {
             cell.myImage.image = UIImage(data: data! as Data)
         }
         
+        //check if the image has been liked, set button image
+        Model.get.getImageFromCoreData()
+        
+        if Model.get.getURLfromDB().contains(photo.photoURL){
+            print(photo.photoTitle)
+            cell.likeButton.setImage(UIImage(named: "red_ic_favorite_border"), for: .normal)
+            
+        }
+        else{
+            print("You haven't liked this photo")
+            cell.likeButton.setImage(UIImage(named: "ic_favorite_border"), for: .normal)
+        }
+        
         return cell
     }
     
+    
+    //MARK: Prepare data for image detail view
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
         let detailsVC: ImageDetailView = segue.destination as! ImageDetailView
@@ -117,7 +132,7 @@ class ImagesFeedTableViewController: UITableViewController {
         }
     }
     
-
+    
     
 }//end of class
     
