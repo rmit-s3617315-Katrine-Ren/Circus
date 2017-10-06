@@ -20,6 +20,7 @@ class MyCell: UITableViewCell
     
     var index: Int!;
     
+    
     @IBAction func favourite(_ sender: Any) {
         
         var currentPhoto : Photos?
@@ -27,17 +28,51 @@ class MyCell: UITableViewCell
         var pUrl : String!
         let flag:Bool! = true
         var currentCard : Card?
+        var pLat : String!
+        var pLong : String!
         
-        print(Model.get.photosArray.count)
+        //print(Model.get.photosArray.count)
         currentPhoto = Model.get.photosArray[index]
         if let _ = currentPhoto
         {
             pName = currentPhoto!.photoTitle
             pUrl = currentPhoto!.photoURL
+            pLat = currentPhoto!.photoLat
+            pLong = currentPhoto!.photoLong
         }
         
-        Model.get.saveImage(image_name: pName, image_URL: pUrl, is_Like: flag, existing: currentCard)
+        //check if the URL already exist in the imageDB
+        Model.get.getImageFromCoreData()
+        if !Model.get.getURLfromDB().contains(pUrl){
+            
+            Model.get.saveImage(image_name: pName, image_URL: pUrl, image_lat: pLat, image_long: pLong, is_Like: flag, existing: currentCard)
+            likeButton.setImage(UIImage(named: "red_ic_favorite_border"), for: .normal)
+            
+        }
+        
+        else {
+            
+            //showAlert()
+            print("The message has been liked")
+        }
         print(Model.get.imageDB.count)
+   
     }
+    
+    
+    //Display the alert view
+    func showAlert()
+        
+    {
+        
+        let alertMessage = UIAlertController(title: "Notice", message:
+            "The image has been liked!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertMessage.addAction(UIAlertAction(title: "Got it", style: UIAlertActionStyle.default,handler: nil))
+        
+        alertMessage.present(alertMessage, animated: true, completion: nil)
+        
+    }
+
 
 }

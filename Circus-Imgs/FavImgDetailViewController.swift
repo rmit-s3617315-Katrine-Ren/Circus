@@ -1,8 +1,8 @@
 //
-//  ImageDetailView.swift
+//  FavImgDetailViewController.swift
 //  Circus-Imgs
 //
-//  Created by Rita Tse on 1/10/17.
+//  Created by MACBOOK on 6/10/17.
 //  Copyright © 2017 s3419529. All rights reserved.
 //
 
@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ImageDetailView: UIViewController {
-    
+class FavImgDetailViewController : UIViewController
+
+{
     //UI Outlets //Connect them to stroyboard!!!
     @IBOutlet weak var imgFull: UIImageView!
     @IBOutlet weak var imgTitle: UILabel!
@@ -30,7 +31,6 @@ class ImageDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadDetails()
-        
         imgMap.mapType = MKMapType.standard
         
         
@@ -84,6 +84,5 @@ class ImageDetailView: UIViewController {
      */
     
 }
-
 
 
