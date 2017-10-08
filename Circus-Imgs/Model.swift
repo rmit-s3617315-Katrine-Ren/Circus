@@ -33,12 +33,19 @@ class Model
     
     //Create a collection of object to store in database
     var imageDB = [Card]()
+    var commentsDB = [Comment]()
     
     //retrieves the image as a 'Image' object and not an 'NSManagedObject'
     func getImage(_ indexPath:IndexPath)->Card
     {
         return imageDB[indexPath.row]
     }
+    
+    func getComment(_ indexPath:IndexPath)->Comment
+    {
+        return commentsDB[indexPath.row]
+    }
+    
     
     //retrieves the URLs of image in core data
     func getURLfromDB() -> [String]
@@ -50,6 +57,20 @@ class Model
         }
         
         return urlList
+    }
+    
+    //retrieve card by photoURL
+    func getCard(image_url: String)->Card
+    {
+        var targetCard: Card?
+        for card in imageDB {
+            if image_url == card.imageURL
+            {
+                targetCard! = card
+            }
+        }
+        return targetCard!
+        
     }
     
     
@@ -80,6 +101,7 @@ class Model
     
     
     // R: tackle retrieving from core data
+    /*retriev image*/
     func getImageFromCoreData()
     {
         do{
@@ -93,7 +115,25 @@ class Model
         }
     }
     
+    /*retriev comment by card*/
+    func fetchComments()
+    {
+       
+        do{
+            let fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Comment")
+            let results = try managedContext.fetch(fetchResult)
+            commentsDB = results as! [Comment]
+            
+        }
+        catch let error as NSError {
+            print ("Could not fetch \(error) , \(error.userInfo )")
+        }
+      
+    }
+    
+    
     // C: create record in core data
+    /*create card*/
     func saveImage(image_name:String, image_URL:String, image_lat:String, image_long:String,is_Like:Bool, existing:Card?)
     {
         //let myEntity = NSEntityDescription.entity(forEntityName: "Card", in: managedContext)!
@@ -134,6 +174,17 @@ class Model
     
 }
 
+     /*create comment*/
+    func saveComment(author_name: String, content: String, nCard: Card?)
+    {
+        let newComment = Comment(context: managedContext)
+        newComment.setValue(author_name, forKey: "author")
+        newComment.setValue(content, forKey: "text")
+        newComment.card = nCard
+        nCard?.addToComment(newComment)
+        commentsDB.append(newComment)
+        updateDatabase()
+    }
 
    
     // MARK : REST API Part
