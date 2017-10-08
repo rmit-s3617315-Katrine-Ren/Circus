@@ -42,6 +42,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Tqw-X2-F4D"/>
                                 </constraints>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="post:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z2B-fu-ach"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-vB-ucV" userLabel="CommentsTable">
                                 <rect key="frame" x="0.0" y="63" width="375" height="509"/>

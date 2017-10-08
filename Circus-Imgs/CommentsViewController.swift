@@ -19,7 +19,9 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var commentsTextfield: UITextField!
     @IBOutlet weak var submitButton: UIButton!
 
-    
+    var myComment:Comment?
+    var author:String = "You"
+    var card: Card?
     
 
     override func viewDidLoad() {
@@ -33,8 +35,25 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        if let _ = myComment
+        {
+            commentsTextfield.text = myComment!.text
+           
+        }
+        
+        print(card?.imageName!)
+        Model.get.fetchComments()
     }
 
+    /* Action of post comment*/
+    @IBAction func post(_ sender: UIButton) {
+        
+        Model.get.saveComment(author_name: author, content: commentsTextfield.text!, nCard: card)
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,7 +67,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Model.get.users.count;
+        return Model.get.commentsDB.count;
     }
     
     
@@ -60,9 +79,9 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsFD", for: indexPath) as! CommentsCell
         
-        cell.commentBox?.text = Model.get.comments[indexPath.row];
-        
-        cell.profileImg.image = UIImage(named: Model.get.users[indexPath.row])
+        let displayCom = Model.get.getComment(indexPath)
+        cell.commentBox?.text = displayCom.text
+        cell.profileImg.image = UIImage(named: Model.get.users[0])
         
         
         return cell

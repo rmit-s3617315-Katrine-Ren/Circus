@@ -113,13 +113,15 @@ class ImagesFeedTableViewController: UITableViewController {
     }
     
     
-    //MARK: Prepare data for image detail view
+    //MARK: Prepare data for segues
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
-        let detailsVC: ImageDetailView = segue.destination as! ImageDetailView
+        
         
         if segue.identifier == "open"
         {
+            let detailsVC: ImageDetailView = segue.destination as! ImageDetailView
+            
             if let selectedRowIndexPath = tableView.indexPathForSelectedRow
             {
                 let photo = Model.get.photosArray[selectedRowIndexPath.row]
@@ -130,9 +132,38 @@ class ImagesFeedTableViewController: UITableViewController {
                 detailsVC.photoLong = photo.photoLong
             }
         }
+        
+        if segue.identifier == "showComment"
+        {
+            let photoComments: CommentsViewController = segue.destination as! CommentsViewController
+            
+            if let selectedRowIndexPath = tableView.indexPathForSelectedRow
+            {
+                let photo = Model.get.photosArray[selectedRowIndexPath.row]
+                print(photo.photoTitle)
+                Model.get.getImageFromCoreData()
+                //create a new card if photo not saved in core data
+                if !Model.get.getURLfromDB().contains(photo.photoURL){
+                    
+                //prepare a new card for comments view
+                photoComments.card?.imageName = photo.photoTitle
+                photoComments.card?.imageURL = photo.photoURL
+                photoComments.card?.imageLat = photo.photoLat
+                photoComments.card?.imageLong = photo.photoLong
+                    
+                Model.get.saveImage(image_name: (photoComments.card?.imageName)!, image_URL: (photoComments.card?.imageURL)!, image_lat: (photoComments.card?.imageLat)!, image_long: (photoComments.card?.imageLong)!, is_Like: false, existing: photoComments.card!)
+                    
+                    
+                }
+                else {
+                    photoComments.card! = Model.get.getCard(image_url: photo.photoURL)
+                }
+        }
+        
+        
+        }
+    
     }
-    
-    
     
 }//end of class
     
